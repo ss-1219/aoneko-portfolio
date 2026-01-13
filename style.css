@@ -154,19 +154,18 @@ header {
 
 /* ハンバーガーボタン */
 .menu-btn {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
   cursor: pointer;
+  z-index: 3000;
   user-select: none;
-  z-index: 1100;
 }
 
 /* メニュー本体（最初は見えない） */
 .menu {
-  position: absolute;
+  position: fixed;
   top: 60px;
   right: 20px;
   background: #fff;
@@ -178,10 +177,9 @@ header {
   transform: translateY(-10px);
   pointer-events: none;
   transition: all 0.3s ease;
-  z-index: 1000;
+  z-index: 2000;
 }
 
-/* 開いたとき */
 .menu.open {
   opacity: 1;
   transform: translateY(0);
@@ -217,7 +215,7 @@ header {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 500;
+  z-index: 1000;
 }
 
 .overlay.active {
