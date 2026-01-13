@@ -107,29 +107,27 @@
 </footer>
 
 <script>
- const menuBtn = document.querySelector(".menu-btn");
- const menu = document.querySelector(".menu");
- const overlay = document.querySelector(".overlay");
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu");
+const overlay = document.querySelector(".overlay");
 
- menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", () => {
   menu.classList.toggle("open");
   overlay.classList.toggle("active");
-
-  // ≡ ⇄ × 切り替え
   menuBtn.textContent = menu.classList.contains("open") ? "×" : "≡";
- });
+});
 
- // 背景クリックで閉じる
- overlay.addEventListener("click", () => {
+overlay.addEventListener("click", () => {
   menu.classList.remove("open");
   overlay.classList.remove("active");
   menuBtn.textContent = "≡";
- });
+});
 
- // メニュー内リンククリックで閉じる
- document.querySelectorAll(".menu a").forEach(link => {
+document.querySelectorAll(".menu a").forEach(link => {
   link.addEventListener("click", () => {
     menu.classList.remove("open");
     overlay.classList.remove("active");
     menuBtn.textContent = "≡";
+  });
+});
 </script>
