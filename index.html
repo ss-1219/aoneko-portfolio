@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>保護猫サポート あおねこ</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="header">
+  <h1>🐾 保護猫サポート あおねこ</h1>
+  <p class="catch">
+    <span>すべての猫に、安心できる居場所を。</span>
+ </p>
+
+  <div class="menu-btn" id="menuBtn">≡</div>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#about">活動について</a></li>
+      <li><a href="#cats">里親募集中の猫</a></li>
+      <li><a href="#support">ご支援のお願い</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay"></div>
+
+<main class="container">
+
+  <section class="hero">
+    <h1 class="hero-title">
+        <span>すべての猫に、</span>
+        <span>安心できる居場所を。</span>
+    </h1>
+    <p>行き場を失った猫たちを、新しい家族へつなぐ保護猫サポート</p>
+    <a href="#cats" class="btn">里親募集中の猫を見る</a>
+  </section>
+
+  <section id="about" class="center">
+    <h2>保護猫活動について</h2>
+    <p>
+      あおねこは、さまざまな事情で行き場を失った猫たちを保護し、
+      新しい家族につなぐことを目的とした保護猫サポート団体です。
+    </p>
+    <p>
+      野外での保護活動、医療ケア、不妊・去勢手術を行い、
+      猫たちが安心して過ごせる環境づくりを大切にしています。
+    </p>
+    <p>
+      猫と里親さま双方が幸せに暮らせるよう、
+      丁寧なマッチングを心がけています。
+    </p>
+  </section>
+
+  <section class="activities">
+    <h2>主な活動内容</h2>
+    <ul>
+      <li>🐾 行き場を失った猫の保護</li>
+      <li>🏥 医療ケア・不妊去勢手術</li>
+      <li>🏠 里親募集・譲渡サポート</li>
+      <li>🤝 譲渡後の相談サポート</li>
+    </ul>
+  </section>
+
+  <section id="cats" class="center">
+    <h2>里親募集中の猫たち</h2>
+
+    <div class="buttons">
+      <a href="#" class="btn">里親について知る</a>
+    </div>
+
+    <div class="cat-card">
+      <img src="images/resque-cat.jpg" alt="白黒の保護猫 あお">
+      <h3>あお（推定2歳）</h3>
+      <p>人懐っこくて甘えん坊な男の子。</p>
+    </div>
+  </section>
+
+  <section id="support" class="center">
+    <h2>ご支援のお願い</h2>
+    <p>
+      あおねこでは、保護された猫たちが安心して過ごせるよう、
+      日々お世話や医療ケアを行っています。
+    </p>
+    <p>
+      医療費やフード代、保護環境の維持には費用がかかります。
+      皆さまのご支援が猫たちの命を支えています。
+    </p>
+  </section>
+
+</main>
+
+<section class="contact center">
+  <h2>お問い合わせ</h2>
+  <p>
+    保護猫活動や里親についてのご質問は、<br>
+    こちらからお気軽にお問い合わせください。
+  </p>
+  <a href="#" class="btn">お問い合わせ</a>
+</section>
+
+<footer class="footer">
+  <p>※ 本サイトは学習用の架空サイトです</p>
+</footer>
+
+<script>
+ const menuBtn = document.querySelector(".menu-btn");
+ const menu = document.querySelector(".menu");
+ const overlay = document.querySelector(".overlay");
+
+ menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("open");
+  overlay.classList.toggle("active");
+
+  // ≡ ⇄ × 切り替え
+  menuBtn.textContent = menu.classList.contains("open") ? "×" : "≡";
+ });
+
+ // 背景クリックで閉じる
+ overlay.addEventListener("click", () => {
+  menu.classList.remove("open");
+  overlay.classList.remove("active");
+  menuBtn.textContent = "≡";
+ });
+
+ // メニュー内リンククリックで閉じる
+ document.querySelectorAll(".menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("open");
+    overlay.classList.remove("active");
+    menuBtn.textContent = "≡";
+</script>
